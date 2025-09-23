@@ -5,15 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com"> <!--recommended, open the connection early -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <!-- recommended, needed for fonts.gstatic.com -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="header-bg"></div>
     <div class="header">
         <div class="header-photo-area">
-            <img class="header-photo" src="./assets/images/profile-pic.jpg">
-            <div class="my-name">Nhi Luong</div>
+            <h1 class="my-name">Nhi Luong</h1>
+            <div class="header-photo"></div>
         </div>
         <div class="about-me-area">
-            <p class="about-me">About me</p>
+            <h2 class="about-me">About me</h2>
             <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
@@ -49,9 +53,22 @@
         </div>
     </div>
     <div class="footer">
-        <div class="contact-area"></div>
-        <imag class="footer-photo" src="./assets/images/footer-pic.jpg">
+        <div class="contact-area">
+            <p>Contact me</p>
+            <p>Please get in touch if you think our work could be mutually beneficial!</p>
+            <p>1234 Randon Road,
+                Random Town, California 12345
+            </p>
+            <div>
+                <img src="./assets/images/phone.svg">
+                <p>555-555-5555</p>
+            </div>
+            <div>
+                <img src="./assets/images/email.svg">
+                <p>firstname.lastname@gmail.com</p>
+            </div>
+        </div>
+        <img class="footer-photo" src="./assets/images/footer-pic.jpg">
     </div>
-
 </body>
 </html>

@@ -1,1 +1,145 @@
+/* 1. Use a more-intuitive box-sizing model */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
 
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+
+/* 3. Enable keyword animations */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+
+body {
+  /* 4. Add accessible line-height */
+  line-height: 1.5;
+  /* 5. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 6. Improve media defaults */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 7. Inherit fonts for form controls */
+input, button, textarea, select {
+  font: inherit;
+}
+
+/* 8. Avoid text overflows */
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/* 9. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+  font-family: 'Playfair Display', serif;
+  font-weight: 200;
+}
+
+/*
+  10. Create a root stacking context
+*/
+#root, #__next {
+  isolation: isolate;
+}
+
+/* @font-face {
+    font-family: "Playfair Display";
+    src: url("./assets/fonts/PlayfairDisplay-VariableFont_wght.ttf") format("truetype");
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url("./assets/fonts/Roboto-VariableFont_wdth,wght.ttf") format("truetype");
+    font-weight: 100 900;
+    font-style: normal;
+} */
+
+body {
+    border: 3px solid black;
+    font-family: "Roboto", Arial, sans-serif;
+    font-weight: 400;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+img {
+    height: 20px;
+}
+
+.header-bg {
+    position: absolute; /* Take the background out from the normal flow */
+    background-color: #1E3640;
+    width: 100%;
+    height: 300px;
+    transform: skewY(-7deg);
+    transform-origin: top left;
+    z-index: -1;
+}
+
+.header {
+    background-color: rgb(0, 255, 255, 0.2);
+    padding: 30px 35px;
+    /* display: flex; */ /* Can't use flex here because the about me text won't wrap when screen width 
+    is narrower */
+}
+
+.header-photo-area {
+    float: left;
+    /* display: flex;
+    flex-direction: column;
+    align-items: center; */
+}
+
+h1 {
+    position: relative;
+    z-index: 3;
+    top: 300px;
+    color: white;
+    text-align: center;
+}
+
+.header-photo {
+    position: relative; /* do this to activate z-index */
+    z-index: 2;
+    width: 200px;
+    height: 300px;
+    margin: 0;
+    background-image: url(https://images.pexels.com/photos/33948694/pexels-photo-33948694.jpeg);
+    background-size: contain; /* resize the background image */
+    background-position: center;
+}
+
+.about-me-area {
+    z-index: 1;
+    background-color: white;
+    position: relative;
+    left: 15px;
+    top: 15px;
+}
+
+.body {
+    padding: 30px 35px;
+}
+
+.footer {
+    border: 1px solid black;
+    padding: 30px 35px;
+    background-color: aquamarine;
+}
