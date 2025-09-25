@@ -1,0 +1,332 @@
+/* 1. Use a more-intuitive box-sizing model */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+
+/* 3. Enable keyword animations */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+
+body {
+  /* 4. Add accessible line-height */
+  line-height: 1.5;
+  /* 5. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 6. Improve media defaults */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+  height: 22px;
+}
+
+/* 7. Inherit fonts for form controls */
+input, button, textarea, select {
+  font: inherit;
+}
+
+/* 8. Avoid text overflows */
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+  font-weight: 300;
+}
+
+/* 9. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+  font-family: 'Playfair Display', serif;
+  font-weight: 200;
+}
+
+/*
+  10. Create a root stacking context
+*/
+#root, #__next {
+  isolation: isolate;
+}
+
+/* @font-face {
+    font-family: "Playfair Display";
+    src: url("./assets/fonts/PlayfairDisplay-VariableFont_wght.ttf") format("truetype");
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url("./assets/fonts/Roboto-VariableFont_wdth,wght.ttf") format("truetype");
+    font-weight: 100 900;
+    font-style: normal;
+} */
+
+body {
+    font-family: "Roboto", Arial, sans-serif;
+    font-weight: 400;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.header-bg {
+    position: absolute; /* Take the background out from the normal flow */
+    background-color: #b2c9d4;
+    width: 100%;
+    height: 300px;
+    transform: skewY(-7deg);
+    transform-origin: top left;
+    z-index: -1;
+}
+
+.header {
+    padding: 30px 35px 0px;
+    /* display: flex; */ /* Can't use flex here because the about me text won't wrap when screen width 
+    is narrower */
+}
+
+.header-photo-area {
+    float: left; /* creates the text wrap effect */
+    height: 240px; /* contains the div so there is no gap when text wraps around the image */
+    /* display: flex;
+    flex-direction: column;
+    align-items: center; */
+}
+
+h1 {
+    position: relative;
+    z-index: 3;
+    top: 190px;
+    color: white;
+    text-align: center;
+}
+
+.header-photo {
+    position: relative; /* do this to activate z-index */
+    z-index: 2;
+    top: -48px;
+    width: 160px;
+    height: 240px;
+    margin: 0;
+    /* background-image: url(https://images.pexels.com/photos/33948694/pexels-photo-33948694.jpeg); */
+    /* background-size: contain; resize the background image */
+    /* background-position: center; */
+}
+
+.header-photo > img {
+    width: 100%;
+    height: auto;
+}
+
+.about-me-area {
+    background-color: white;
+    position: relative;
+    z-index: 1;
+    left: 15px;
+    margin: 25px 12px;
+    padding: 15px;
+    box-shadow: 5px 5px 10px rgb(87, 89, 89);
+}
+
+.description {
+    margin: 25px;
+}
+
+.icon-area {
+    margin: 0 30px;
+    display: flex;
+    justify-content: end;
+    gap: 10px;
+}
+
+.body {
+    background-color: rgb(0, 255, 255, 0.3);
+    padding: 30px 35px;
+    width: 100%;
+}
+
+.card-container {
+    margin: 20px 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    box-shadow: 2px 2px 4px gray;
+}
+
+.thumbnail {
+    width: 250px;
+    height: 170px;
+    object-fit: contain; /* resize the background image */
+    background-position: center;
+}
+
+.project-intro {
+    margin: 8px 15px;
+}
+
+.project-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.project-links {
+    display: flex;
+    gap: 10px;
+}
+
+.project-links img {
+    width: 16px;
+}
+
+.project-description {
+    font-size: 13px;
+    font-weight: 200;
+}
+
+.footer {
+    border: 1px solid black;
+    background-color: aquamarine;
+    padding: 30px 35px;
+    width: 100%; /* note: breaks the content from the flex - center */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.contact-area {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+}
+
+.contact-area > p {
+    margin: 10px 0px;
+}
+
+.contact-info {
+    display: flex;
+    gap: 15px;
+}
+
+.footer-socials {
+    margin-top: 20px;
+    display: flex;
+    gap: 20px;
+}
+
+.footer-photo {
+    display: flex;
+    justify-content: center;
+}
+
+.footer-photo img {
+    max-width: 500px;
+    height: auto;
+}
+
+@media (600px < width <= 1024px) { /* Tablet */
+    
+    h1 {
+        top: 0px;
+        left: 180px;
+        color: black;
+    }
+    
+    .header-photo {
+        top: -20px;
+    }
+    
+    .about-me-area {
+        top: 30px;
+    }
+    
+    .about-me {
+        text-align: center;
+    }
+    
+    .description {
+        margin: 10px 25px 25px;
+    }
+
+    .footer-photo img {
+        max-width: 230px;
+    }
+}
+
+@media (max-width: 600px) { /* Mobile */
+
+    h1 {
+        /* position: static; */
+        top: 600px;
+        font-size: 100px;
+    }
+
+    h2{
+        text-align: center;
+    }
+    .header {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .header-photo-area {
+        float: none;
+        height: auto;
+    }
+
+    .header-photo {
+        /* position: static; */
+        /* z-index: 0; */
+        top: -130px;
+        width: 100%;
+        height: 620px;
+        background-size: cover;
+    }
+
+    .icon-area {
+        justify-content: center;
+    }
+
+    .about-me-area {
+        position: static;
+        /* z-index: 0; */
+        margin: 0;
+        padding: 20px 0;
+    }
+
+    .footer {
+        padding: 0;
+        grid-template: 1fr 1fr / 1fr;
+    }
+
+    .contact-area {
+        padding: 30px 35px;
+    }
+
+    .footer-socials {
+        display: flex;
+        justify-content: center;
+    }
+
+    .footer-photo img {
+        max-width: 100%;
+    }
+
+
+}
+
+/*# sourceMappingURL=app.css.map*/
