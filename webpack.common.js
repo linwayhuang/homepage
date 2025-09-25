@@ -11,7 +11,7 @@ plugins: [
         title: 'Production',
         template: './src/template.html',
     }),
-    new MiniCssExtractPlugin(),
+    new MiniCssExtractPlugin(), /* Extract CSS into a separate file */
 ],
 output: {
     filename: 'main.bundle.js',
@@ -22,7 +22,7 @@ module: {
     rules: [
         {
             test: /\.css$/i,
-            use: [MiniCssExtractPlugin.loader, "css-loader"],
+            use: [MiniCssExtractPlugin.loader, "css-loader"], /* Extract CSS into a separate file */
         },
         {
             test: /\.html$/i,
