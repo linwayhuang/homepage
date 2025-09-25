@@ -271,7 +271,7 @@ h1 {
 
     h1 {
         /* position: static; */
-        top: 700px;
+        top: 600px;
         font-size: 100px;
     }
 
@@ -291,8 +291,9 @@ h1 {
     .header-photo {
         /* position: static; */
         /* z-index: 0; */
+        top: -130px;
         width: 100%;
-        height: 720px;
+        height: 620px;
         background-size: cover;
     }
 
